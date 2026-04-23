@@ -1,4 +1,4 @@
-🧪 EXPERIMENT: Semantic Web using Apache Jena
+# 🧪 EXPERIMENT: Semantic Web using Apache Jena
 To study Semantic Web using Apache Jena and perform SPARQL queries on RDF data.
 
 ✔️ What is Semantic Web?
@@ -24,34 +24,34 @@ Apache Jena
 ✅ Step 1: Install Java
 Jena is a Java-based framework.
 
-# Update system packages
+Update system packages
 sudo dnf update -y
-# Install Java OpenJDK 17
+Install Java OpenJDK 17
 sudo dnf install java-17-openjdk java-17-openjdk-devel -y
-# Verify Java installation
+Verify Java installation
 java -version
 
 ✅ Step 2: Download Apache Jena
-# Navigate to temporary directory
+Navigate to temporary directory
 cd /tmp
-# Download Apache Jena 5.6.0
+Download Apache Jena 5.6.0
 wget https://downloads.apache.org/jena/binaries/apache-jena-5.6.0.tar.gz
-# Extract the archive
+Extract the archive
 tar -xzf apache-jena-5.6.0.tar.gz
-# Move to /opt directory
+Move to /opt directory
 sudo mv apache-jena-5.6.0 /opt/jena
-# Set appropriate permissions
+Set appropriate permissions
 sudo chmod -R 755 /opt/jena
 
 Installing Jena framework
 
 ✅ Step 3: Set Environment Variables
-# Add Jena to PATH
+Add Jena to PATH
 echo 'export JENA_HOME=/opt/jena' >> ~/.bashrc
 echo 'export PATH=$PATH:$JENA_HOME/bin' >> ~/.bashrc
-# Reload bash configuration
+Reload bash configuration
 source ~/.bashrc
-# Verify installation
+Verify installation
 sparql --version
 
 ✅ Step 4: Create RDF File
