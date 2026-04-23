@@ -30,22 +30,23 @@ class Employee extends Person {
 
 let p = new Person("Vaishnavi", 20, "Pune");
 
-console.log(p.name);      // public ✔️
-// console.log(p.age);   // ERROR ❌
-// console.log(p.city);  // ERROR ❌
+console.log(p.name);      // public 
+// console.log(p.age);   // ERROR 
+// console.log(p.city);  // ERROR 
 
-console.log(p.getAge());  // ✔️ via method
+console.log(p.getAge());  //  via method
 p.display();
 
 let e = new Employee("Rahul", 25, "Mumbai");
 e.showDetails();
 
 
-// ▶️ Step 2: Compile
-// tsc access.ts
-// ▶️ Step 3: Run
-// node access.js
-// ✅ OUTPUT
+// Step 2: Compile
+// tsc accessModifiers.ts
+// Step 3: Run
+// node accessModifiers.js
+
+// OUTPUT
 // Vaishnavi
 // 20
 // Name: Vaishnavi
