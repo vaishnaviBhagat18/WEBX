@@ -1,4 +1,5 @@
 🧪 EXPERIMENT: Inheritance in TypeScript
+
 To implement inheritance in TypeScript using classes, access modifiers, and methods.
 
 🧠 CONCEPT (VERY IMPORTANT FOR VIVA)
