@@ -1,0 +1,33 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:student1024578963 a foaf:Person ;
+foaf:name "Saniya Gore" ;
+foaf:age 21 ;
+ex:studentID "1024578963" ;
+ex:course "Computer Engineering" .
+ex:student2135689047 a foaf:Person ;
+foaf:name "Pranay Bhosale" ;
+foaf:age 22 ;
+ex:studentID "2135689047" ;
+ex:course "Computer Engineering" .
+ex:student3246790158 a foaf:Person ;
+foaf:name "Vaishnavi Gawas" ;
+foaf:age 21 ;
+ex:studentID "3246790158" ;
+ex:course "Information Technology" .
+ex:student4357801269 a foaf:Person ;
+foaf:name "Viraj Desai" ;
+foaf:age 22 ;
+ex:studentID "4357801269" ;
+ex:course "Information Technology" .
+ex:student5468912370 a foaf:Person ;
+foaf:name "Sail Ambelkar" ;
+foaf:age 21 ;
+ex:studentID "5468912370" ;
+ex:course "Computer Engineering" .
+ex:student6579023481 a foaf:Person ;
+foaf:name "Paras Bhogale" ;
+foaf:age 22 ;
+ex:studentID "6579023481" ;
+ex:course "Electronics Engineering" .

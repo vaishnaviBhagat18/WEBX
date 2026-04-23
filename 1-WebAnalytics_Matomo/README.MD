@@ -1,147 +1,123 @@
 🧪 EXPERIMENT 1: Web Analytics using Matomo
-🎯 AIM (write in journal)
-
 To study web analytics using open-source tool Matomo and analyze website traffic.
-
-🧠 WHAT IS HAPPENING (VERY IMPORTANT)
-
-Before steps, understand:
 
 Matomo = analytics tool (like Google Analytics)
 Docker = runs software in containers (no manual install)
 MariaDB = database to store analytics data
 
-👉 Flow:
-
 Website → Tracking Code → Matomo Server → Database → Dashboard
+
 ⚙️ SOFTWARE USED
-Fedora OS 🐧
+Fedora OS 
 Docker
 Docker Compose
 Web Browser
-🔧 STEP-BY-STEP (EXAM FRIENDLY)
+
+
 ✅ Step 1: Install Docker
-
-👉 Why?
-
 To run Matomo without manual setup.
 
 Run:
-
 sudo dnf install docker -y
 sudo systemctl start docker
 sudo systemctl enable docker
 
 Check:
-
 docker --version
+
 ✅ Step 2: Install Docker Compose
-
-👉 Why?
-
 To run multiple containers (Matomo + Database)
-
+Run:
 sudo dnf install docker-compose -y
 docker compose version
+
 ✅ Step 3: Create Project Folder
 mkdir ~/matomo-docker
 cd ~/matomo-docker
 
-👉 Why?
-
 To store configuration files
 
 ✅ Step 4: Create docker-compose.yml
-
-👉 Why?
-
-Defines services:
-
-Matomo (app)
-MariaDB (database)
-
-Paste (you already have it ✔️)
+Defines services (Matomo + Database)
+[docker-compose.yml](docker-compose.yml)
 
 ✅ Step 5: Start Matomo
 docker compose up -d
 
-👉 Why?
-
 Starts containers in background
 
 Check:
-
 docker ps
+
 ✅ Step 6: Open Matomo
-
-👉 Browser:
-
+Browser:
 http://localhost:8080
 
-👉 Do setup:
-
+Do setup:
 Next → Next → Next
 Create admin account
 Add website
+
 ✅ Step 7: Get Tracking Code
+This tracks user activity on your website.
 
-👉 Why?
-
-This tracks user activity
-
-Example:
-
-_paq.push(['trackPageView']);
 ✅ Step 8: Create Test Website
 mkdir ~/matomo-test-site
 cd ~/matomo-test-site
 
 Create:
-
 nano index.html
+[index.html](index.html)
 
-👉 Paste code + tracking script
+Create:
+nano about.html
+[about.html](about.html)
+
+Create:
+nano products.html
+[products.html](products.html)
+
+[website screenshot](matomo.png)
 
 ✅ Step 9: Run Website
 python3 -m http.server 8000
 
-👉 Open:
-
+Open:
 http://localhost:8000
-✅ Step 10: Generate Traffic
 
-👉 Click pages multiple times OR:
+✅ Step 10: Generate Traffic
+Click pages multiple times OR:
 
 curl http://localhost:8000
+
 ✅ Step 11: Check Analytics
-
-👉 Open:
-
+Open:
 http://localhost:8080
 
 Go to:
-
 Visitors → Real-time
 Behaviour → Pages
 
-👉 You’ll see:
-
+You’ll see:
 Page views
 Visitors
 Time spent
-📊 OUTPUT (WRITE IN JOURNAL)
+
+
+📊 OUTPUT
 
 Matomo dashboard displays:
-
 Number of visitors
 Page views
 User navigation
 Real-time analytics
-📚 THEORY (WRITE THIS)
+
+📚 THEORY
 
 Web analytics is the process of collecting and analyzing website data to understand user behavior.
 Matomo is an open-source analytics tool that provides insights such as visitor count, page views, and traffic sources.
 It uses tracking code embedded in websites to collect data and stores it in a database for visualization.
+
 
 🎤 VIVA QUESTIONS (IMPORTANT)
 ❓ What is Web Analytics?
@@ -165,13 +141,3 @@ Page views
 Visitors
 Time spent
 Device info
-⚠️ IF LAB PROVIDES FILES
-
-If they give:
-
-docker-compose.yml → just run:
-docker compose up -d
-
-If already running:
-
-docker ps
