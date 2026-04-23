@@ -35,6 +35,7 @@ tsc converts TypeScript → JavaScript
 
 ✅ Step 3: Create File
 nano hello.ts
+[hello.ts](hello.ts)
 
 ✅ Program 1: Hello World
 console.log("Hello World");
@@ -47,6 +48,7 @@ Hello World
 
 ✅ Program 2: String Example
 nano name.ts
+[name.ts](name.ts)
 
 let firstName:string="Vaishnavi";
 let lastName:string="Bhagat";
@@ -64,6 +66,7 @@ My Name is Vaishnavi Bhagat
 
 ✅ Program 3: Multiplication Table
 nano table.ts
+[table.ts](table.ts)
 
 let num:number=5;
 
