@@ -1,0 +1,45 @@
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Total</th>
+        <th>Remark</th>
+      </tr>
+    </thead>
+    <tbody>
+
+  
+      {% for record in data %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ record.Name }}</td>
+        <td>{{ record.Title }}</td>
+        <td>{{ record.Total }}</td>
+        <td>{{ record.Remark }}</td>
+      </tr>
+      {% endfor %}
+
+
+
+<!-- <html>
+<body>
+
+<h2>Quiz Result</h2>
+
+{% if data %}
+    {% for student in data %}
+        <p><b>Name:</b> {{student.Name}}</p>
+        <p><b>Title:</b> {{student.Title}}</p>
+        <p><b>Total:</b> {{student.Total}}</p>
+        <p><b>Remark:</b> {{student.Remark}}</p>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No Data Found</p>
+{% endif %}
+
+</body>
+</html> -->
