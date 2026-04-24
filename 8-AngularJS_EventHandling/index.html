@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="myController">
+
+    <h1>AngularJS Event Handling</h1>
+
+    <!-- Button Click Event -->
+    <button ng-click="showMessage()">Click Me</button>
+    <p>{{message}}</p>
+
+    <!-- Input Event -->
+    <br>
+    <label>Enter Name:</label>
+    <input type="text" ng-model="name" ng-change="updateMessage()">
+    <p>{{greeting}}</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myController", function($scope) {
+
+            // Button click function
+            $scope.showMessage = function() {
+                $scope.message = "Button Clicked!";
+            };
+
+            // Input change function
+            $scope.updateMessage = function() {
+                $scope.greeting = "Hello " + $scope.name;
+            };
+
+        });
+    </script>
+
+</body>
+</html>
