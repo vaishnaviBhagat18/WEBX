@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>First AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <h1>Student Records</h1>
+
+    <h2>Failed Students list</h2>
+    <table>
+        <tr ng-repeat="s in failedStudents">
+            <td>{{s.rollno}}</td>
+            <td>{{s.name}}</td>
+            <td>[{{s.mcq + s.nmcq}}]</td>
+        </tr>
+    </table>
+
+    <h2>Passed Students list</h2>
+    <table>
+        <tr ng-repeat="s in passedStudents">
+            <td>{{s.rollno}}</td>
+            <td>{{s.name}}</td>
+            <td>[{{s.mcq + s.nmcq}}]</td>
+        </tr>
+    </table>
+
+    <h2>Student Statistics</h2>
+    <p>Total Students: {{students.length}}</p>
+    <p>Passed Students: {{passedStudents.length}}</p>
+    <p>Failed Students: {{failedStudents.length}}</p>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('myController', function ($scope) {
+            $scope.students = [
+                { rollno: 1, name: " ANERAO AMOGH HEMANT", mcq: 7, nmcq: 8 },
+                { rollno: 2, name: " ARONDEKAR GANESH CHANDRAKANT", mcq: 4, nmcq: 8 },
+                { rollno: 3, name: " BAGAVE RENUKA RAVINDRA", mcq: 6, nmcq: 10 },
+                { rollno: 4, name: " BHAGWAT ATHARVA SANTOSH", mcq: 6, nmcq: 5 },
+                { rollno: 5, name: " BIRJE AAKANKSHA ANIL", mcq: 9, nmcq: 7 },
+                { rollno: 6, name: " BORKAR AFIYA AYUB", mcq: 10, nmcq: 7 },
+                { rollno: 7, name: " CHOUDHARY AJIT CHANDRAPAL", mcq: 9, nmcq: 10 },
+                { rollno: 8, name: " DANGE AARYA SANJAY", mcq: 1, nmcq: 6 },
+                { rollno: 9, name: " DESAI SHRUTI SANTOSH", mcq: 8, nmcq: 5 },
+                { rollno: 10, name: " WANIVDEKAR TANVI PRASHANT", mcq: 2, nmcq: 4 }
+            ];
+
+            $scope.failedStudents = $scope.students.filter(s => s.mcq + s.nmcq < 8);
+            $scope.passedStudents = $scope.students.filter(s => s.mcq + s.nmcq >= 8);
+
+        });
+    </script>
+</body>
+
+</html>
