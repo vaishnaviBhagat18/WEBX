@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX User Validation</title>
+    <script>
+        function validateUser() {
+
+            var username = document.getElementById("username").value;
+
+            // Create AJAX object
+            var request = new XMLHttpRequest();
+
+            // Dummy API simulation (works without server)
+            request.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+
+            request.onreadystatechange = function () {
+
+                if (this.readyState === 4 && this.status === 200) {
+
+                    var users = JSON.parse(this.responseText);
+
+                    var found = false;
+
+                    users.forEach(function(user) {
+                        if (user.username.toLowerCase() === username.toLowerCase()) {
+                            found = true;
+                        }
+                    });
+
+                    if (found) {
+                        document.getElementById("result").innerHTML =
+                            "<span style='color:green'>User is valid ✔️</span>";
+                    } else {
+                        document.getElementById("result").innerHTML =
+                            "<span style='color:red'>User not found ❌</span>";
+                    }
+                }
+            };
+
+            request.send();
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>AJAX User Validation</h2>
+
+<label>Enter Username:</label>
+<input type="text" id="username">
+
+<button onclick="validateUser()">Validate</button>
+
+<br><br>
+
+<div id="result"></div>
+
+</body>
+</html>
