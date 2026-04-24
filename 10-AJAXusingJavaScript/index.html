@@ -1,0 +1,82 @@
+<html>
+<head>
+
+<title>Getting data dynamically</title>
+<script>
+function displayFullName() {
+      var cnt=0;
+
+    var request = new XMLHttpRequest();
+     var n=(document.A.sn.value).toUpperCase()
+ 
+    request.open("GET", `http://172.16.5.154:4000/api/getAll/${n}`,true);
+
+   document.getElementById("myText").innerHTML = cnt;
+    request.onreadystatechange = function() {
+      
+        if(this.readyState === 4 && this.status === 200) {
+      
+            var Sresponse = JSON.parse(this.responseText);
+             
+      
+            str=""
+	   
+            Sresponse.forEach(element => {
+           
+		            cnt=cnt+1
+                d2="<li>"+"Name :"+"<b>"+element.Name+"</b>"+"</li>"
+		
+                 
+                
+                  d4="<li>"+"Tital :"+element.Title+"</li>"
+                 
+                   d7="<li>"+"Total :"+element.Total+"</li>"
+		d8="<li>"+"Remark :"+element.Remark+"</li>"
+
+           
+           str=str+d2+d4+d7+d8+"<hr/>"
+
+             
+             });
+
+
+            document.getElementById("result").innerHTML = str;
+            document.getElementById("myText").innerHTML = cnt;
+
+            //alert(str)
+        }
+
+    else
+       {
+      document.getElementById("result").innerHTML="Could not get data due to <br/>1-server might not be running <br/> 2- network failure <br/>3. No input "
+        }
+    };
+
+     
+   
+    request.send();
+}
+
+
+
+</script>
+</head>
+<body>
+<form name="A">
+   <input type="text" autocomplete="off" name="sn" id="search" onkeyup="displayFullName()" placeholder="Start typing student name : TE IT Students" size=50></br>
+    <b>Total record(s) found: <span id="myText"></span></b>
+   <h2>Getting Data using AJAX </h2> 
+    <div id="result">
+        <p>Below contents Will change as you start typing ...</p>
+    </div>
+    
+  Select the name of class :<select name="cl">
+  <option> FE </option>
+  <option> SE </option>
+  <option> TE </option </option>
+ <option> BE </option>
+</select>
+
+</form>
+</body>
+</html>
