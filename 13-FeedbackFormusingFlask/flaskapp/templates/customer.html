@@ -1,0 +1,30 @@
+<html>
+<body>
+<h3>Feedback Form </h3>
+
+<form method="post" action="/process3">
+<!-- <form name="A" method="post" action="http://127.0.0.1:5000/process3"> -->
+
+<p>Your Name : <input type="text" name="UserName"></p>
+<p>Your Email : <input type="email" name="Email"></p>
+<p>Your Contact : <input type="text" name="Contact"></p>
+<p>Your Mobile no : <input type="number" name="MobileNo"></p>
+
+<p>Your Branch :
+<select name="branch">
+  <option value="IT">IT</option>
+  <option value="CSE">CSE</option>
+</select>
+</p>
+
+<p>Select teaching qualities:
+<input type="radio" name="TeachingQualities" value="Best"> Best
+<input type="radio" name="TeachingQualities" value="Good"> Good
+<input type="radio" name="TeachingQualities" value="Poor"> Poor
+</p>
+
+<input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
