@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Hello World</title>
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="myController">
+
+    <h1>AngularJS Hello World</h1>
+
+    <!-- Input using ng-model -->
+    <label>Enter Name: </label>
+    <input type="text" ng-model="name">
+
+    <!-- Expression -->
+    <h2>Hello {{name}}</h2>
+
+    <script>
+        // Create module
+        var app = angular.module("myApp", []);
+
+        // Create controller
+        app.controller("myController", function($scope) {
+            $scope.name = "Vaishnavi";
+        });
+    </script>
+
+</body>
+</html>
